@@ -1,6 +1,6 @@
 /*
 Author: Justin Trugman
-HW1A - Eratosthenes Sieve
+HW1A - Eratosthenes Sieve Efficient 
 
 I pledge my honor that I abided by the Stevens Honor System
 */
