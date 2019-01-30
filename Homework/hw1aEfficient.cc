@@ -1,6 +1,6 @@
 /*
 Author: Justin Trugman
-HW1A - More Efficient Version of Eratosthenes Sieve
+HW1A - Eratosthenes Sieve
 
 I pledge my honor that I abided by the Stevens Honor System
 */
@@ -18,22 +18,15 @@ int eratosthenes (int n) {
         prime[i] = true;
     }
 
-
     // mark primes equal to false
-    for (int i = 4; i <= n; i+=2) {
-        prime[i] = false;
-        cout << prime[i] << ' ';
+    for (int i = 2; i <= sqrt(n); i++){
+        if (prime[i] == true){
+            for(int j = i * 2; j <= n; j += i){
+                prime[j] = false;
+            }
+        }
     }
 
-
-    // for (int i = 3; i < n; i++) {
-    //     if (prime[i] == true){
-    //         for(int j = i * i; j <= n; i*= 2){
-    //             prime[j] = false;
-    //             cout << prime [j]  << '\t';
-    //         }
-    //     }
-    // }
 
     // print prime numbers
      for (int i = 0; i <= sizeof(prime); i++) {
@@ -41,7 +34,6 @@ int eratosthenes (int n) {
             cout << i << '\t';
     }
     cout << '\n';
-
 }
 
 
