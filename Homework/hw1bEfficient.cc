@@ -2,7 +2,8 @@
 Author: Justin Trugman
 HW1B - Computer Choose (n,r)
 Cite: Collaborators- KC Vasilas & David Lehman 
-    Used this website to understand formula http://www.codehappy.net/cspage/nchoosek.html 
+    Used these websites to understand formula/Dynamic http://www.codehappy.net/cspage/nchoosek.html 
+        https://www.geeksforgeeks.org/binomial-coefficient-dp-9/
 
 I pledge my honor that I abided by the Stevens Honor System
 */
