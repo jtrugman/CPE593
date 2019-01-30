@@ -30,17 +30,15 @@ double choose(int n, int r) {
 
 int main() {
 
-    cout << choose(15,9) << '\n';
+  int numTrials = 100000000;
+	//  cin >> numTrials;
+	default_random_engine generator;
+	uniform_int_distribution<int> distribution(0,500);	
 
-//   int numTrials = 100000000;
-// 	//  cin >> numTrials;
-// 	default_random_engine generator;
-// 	uniform_int_distribution<int> distribution(0,500);	
-
-//   for (int i = 0; i < numTrials; i++) {
-// 		int n = distribution(generator);
-// 		uniform_int_distribution<int> rdist(0,n);	
-// 		int r = rdist(generator);
-//     choose(n,r);
-// 	}
+  for (int i = 0; i < numTrials; i++) {
+		int n = distribution(generator);
+		uniform_int_distribution<int> rdist(0,n);	
+		int r = rdist(generator);
+    cout << choose(n,r) << '\t';
+	}
 }
