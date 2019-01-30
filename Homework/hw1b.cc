@@ -1,7 +1,7 @@
 /*
 Author: Justin Trugman
 HW1B - Computer Choose (n,r)
-
+Cite: Used this website to understand formula http://www.codehappy.net/cspage/nchoosek.html
 I pledge my honor that I abided by the Stevens Honor System
 */
 
@@ -10,15 +10,31 @@ I pledge my honor that I abided by the Stevens Honor System
 using namespace std;
 
 double choose(int n, int r) {
-    if (r == 0 || n == r){
+    if (n == r){
         return 1;
-    } else {
-        return choose(n-1, r) + choose(n-1, r);
+    } else if (r == 1){
+        return n;
     }
-
+    return choose(n-1,r) + choose(n-1, r-1);
 }
 
+
+// if (n <= 1 ) 
+//         return 1;
+//     return n * choose(n-1);    
+
+
+//     if (r > 1){
+//         return 1;
+//     } else {
+//         return choose(n-1, r) + choose(n-1, r);
+//     }
+
+
+
 int main() {
+
+
   int numTrials = 100000000;
 	//  cin >> numTrials;
 	default_random_engine generator;
