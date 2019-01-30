@@ -39,6 +39,6 @@ int main() {
 		int n = distribution(generator);
 		uniform_int_distribution<int> rdist(0,n);	
 		int r = rdist(generator);
-    cout << choose(n,r) << '\t';
+        choose(n,r);
 	}
 }
