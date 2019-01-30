@@ -10,8 +10,9 @@ I pledge my honor that I abided by the Stevens Honor System
 #include <cmath>
 using namespace std;
 
-void eratosthenes (int n) {
+int eratosthenes (int n) {
 
+    int counter = 0;
     // mark all items in array as true
     bool prime[n];
     for (int i = 0; i <= sizeof(prime); i++) {
@@ -31,17 +32,19 @@ void eratosthenes (int n) {
         }
     }
 
-
-    // print prime numbers
+     // count prime numbers
      for (int i = 2; i <= sizeof(prime); i++) {
-         if (prime[i] == true)
-            cout << i << '\t';
+         if (prime[i] == true) {
+             counter++;
+         }   
     }
     cout << '\n';
+
+    return counter;
 }
 
 
 int main (){
-    eratosthenes(10);
+    cout << eratosthenes(10) << '\n';
 
 }
