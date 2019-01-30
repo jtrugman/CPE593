@@ -33,7 +33,7 @@ void eratosthenes (int n) {
 
 
     // print prime numbers
-     for (int i = 0; i <= sizeof(prime); i++) {
+     for (int i = 2; i <= sizeof(prime); i++) {
          if (prime[i] == true)
             cout << i << '\t';
     }
@@ -42,6 +42,6 @@ void eratosthenes (int n) {
 
 
 int main (){
-    eratosthenes(100);
+    eratosthenes(10);
 
 }
