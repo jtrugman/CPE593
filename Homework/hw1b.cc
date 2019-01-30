@@ -1,7 +1,9 @@
 /*
 Author: Justin Trugman
 HW1B - Computer Choose (n,r)
-Cite: Used this website to understand formula http://www.codehappy.net/cspage/nchoosek.html
+Cite: Collaborators- KC Vasilas & David Lehman 
+    Used this website to understand formula http://www.codehappy.net/cspage/nchoosek.html 
+
 I pledge my honor that I abided by the Stevens Honor System
 */
 
@@ -10,12 +12,10 @@ I pledge my honor that I abided by the Stevens Honor System
 using namespace std;
 
 double choose(int n, int r) {
-    if (n == r){
+    if (r == 0 || r == n){
         return 1;
-    } else if (r == 1){
-        return n;
     }
-    return choose(n-1,r) + choose(n-1, r-1);
+    return choose(n-1, r) + choose(n-1, r-1);
 }
 
 
