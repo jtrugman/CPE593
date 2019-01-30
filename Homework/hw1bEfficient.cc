@@ -13,16 +13,24 @@ I pledge my honor that I abided by the Stevens Honor System
 using namespace std;
 
 double choose(int n, int r) {
-    if (r == 0 || r == n){
-        return 1;
+    int memo[n + 1][r + 1];
+
+    for (int i = 0; i <= n; i++){
+        for (int j = 0; j <= min(i, r); j++){
+            if (j == 0 || j == i){
+                memo[i][j] = 1;
+            } else {
+                memo[i][j] = memo[i - 1][j - 1] + memo[i - 1][j];
+            }
+        }
     }
-    return choose(n-1, r) + choose(n-1, r-1);
+    return memo[n][r];
 }
 
 
 int main() {
 
-    cout << choose(25,9);
+    cout << choose(15,9) << '\n';
 
 //   int numTrials = 100000000;
 // 	//  cin >> numTrials;
