@@ -10,7 +10,7 @@ I pledge my honor that I abided by the Stevens Honor System
 #include <cmath>
 using namespace std;
 
-int eratosthenes (int n) {
+void eratosthenes (int n) {
 
     // mark all items in array as true
     bool prime[n];
@@ -19,9 +19,13 @@ int eratosthenes (int n) {
     }
 
     // mark primes equal to false
-    for (int i = 2; i <= sqrt(n); i++){
-        if (prime[i] == true){
-            for(int j = i * 2; j <= n; j += i){
+    for (int j = 4; j <= n; j+=2){
+        prime[j] = false;
+    }
+
+    for (int i = 3; i <= n; i++){
+        if (prime[i] == true) {
+            for (int j = i*i; j <= n; j+=2*i){
                 prime[j] = false;
             }
         }
@@ -38,6 +42,6 @@ int eratosthenes (int n) {
 
 
 int main (){
-    eratosthenes(10);
+    eratosthenes(100);
 
 }

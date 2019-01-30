@@ -10,7 +10,7 @@ I pledge my honor that I abided by the Stevens Honor System
 #include <cmath>
 using namespace std;
 
-int eratosthenes (int n) {
+void eratosthenes (int n) {
 
     // mark all items in array as true
     bool prime[n];
@@ -40,6 +40,6 @@ int eratosthenes (int n) {
 
 
 int main (){
-    eratosthenes(10);
+    eratosthenes(100);
 
 }
