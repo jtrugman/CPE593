@@ -2,7 +2,8 @@
 Author: Justin Trugman
 HW3A - Insertion Sort
 Cite: Collaborators- KC Vasilas & David Lehman 
-
+    Referenced: https://proprogramming.org/insertion-sort-in-c/
+        for implementing if statement logic
 I pledge my honor that I abided by the Stevens Honor System
 */
 
