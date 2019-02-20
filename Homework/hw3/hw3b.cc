@@ -2,6 +2,7 @@
 Author: Justin Trugman
 HW3A - Quick Sort
 Cite: Collaborators- KC Vasilas & David Lehman 
+Reference: Professor's Classes Github Repository 
 
 I pledge my honor that I abided by the Stevens Honor System
 */
@@ -12,39 +13,22 @@ I pledge my honor that I abided by the Stevens Honor System
 using namespace std;
 
 
-void quickSort(int x[], int left, int right) {
+void quicksort(int x[], int L, int R) {
+  if (R <= L)
+    return;
+  int pivot = (x[L] + x[R]) / 2;
+  int i = L, j = R;
 
-  int i = left, j = right;
-  int pivot = (x[left] + x[right])/2;
 
-  while (i <= j) {
-    while (x[i] < pivot) {
+  while (i < j) {
+    while (x[i]< pivot)
       i++;
-    }
-    while (x[j] > pivot) {
+    while(x[j] >= pivot)
       j--;
-    }
-
-    if (i <= j) {
-      int tmp = x[i];
-      x[i] = x[j];
-      x[j] = tmp;
-      i++;
-      j--;
-    }
+    swap(x[i], x[j]);
   }
-
-  if (left < j) {
-    quickSort(x, left, j);
-  }
-
-  if (i < right) {
-    quickSort(x, i, right);
-  }
-    cout << '\n';
-    for (int i = 0; i < right; i++){
-        cout << x[i] << '\t';
-    }
+  quicksort(x, L, i);
+  quicksort(x, i+1, R);
 }
 
 
@@ -61,7 +45,7 @@ int main (){
         for (int i = 0; i < n; i++){
             cout << x[i] << '\t';
         }
-        quickSort(x, x[0], x[n-1]);
+        quicksort(x, x[0], x[n-1]);
 
 
     }
