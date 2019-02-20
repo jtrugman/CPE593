@@ -13,7 +13,7 @@ I pledge my honor that I abided by the Stevens Honor System
 using namespace std;
 
 
-void quicksort(int x[], int L, int R) {
+void quicksort(int x[], int L, int R, int n) {
   if (R <= L)
     return;
   int pivot = (x[L] + x[R]) / 2;
@@ -27,8 +27,9 @@ void quicksort(int x[], int L, int R) {
       j--;
     swap(x[i], x[j]);
   }
-  quicksort(x, L, i);
-  quicksort(x, i+1, R);
+  quicksort(x, L, i, n);
+  quicksort(x, i+1, R, n);
+
 }
 
 
@@ -45,8 +46,11 @@ int main (){
         for (int i = 0; i < n; i++){
             cout << x[i] << '\t';
         }
-        quicksort(x, x[0], x[n-1]);
-
+        quicksort(x, x[0], x[n-1], n);
+        cout << '\n';
+        for (int i = 0; i < n; i++){
+            cout << x[i] << '\t';
+        }
 
     }
 }
