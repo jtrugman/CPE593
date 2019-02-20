@@ -21,7 +21,7 @@ int main()
             cout << x[i] << '\t';
         }
 
-      quick_sort(x,x[0],x[n-1]);
+      quick_sort(x,0,n-1);
         cout << '\n';
         for (int i = 0; i < n; i++){
             cout << x[i] << '\t';
