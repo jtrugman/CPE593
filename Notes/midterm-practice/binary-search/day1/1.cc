@@ -10,7 +10,7 @@ BinarySearchRecursiveCompute(int [] array, int key, int left, int right) {
     int mid = (left + right) / 2;
     if (array[mid] == key) {
         return mid;
-    } else if (key < array[mid]) {
+    } else if (array[mid] > key) {
         return BinarySearchRecursiveCompute(array, key, left, mid - 1);
     } else {
         return BinarySearchRecursiveCompute(array, key, mid + 1, right);
