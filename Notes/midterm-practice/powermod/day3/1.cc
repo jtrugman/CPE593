@@ -1,0 +1,3 @@
+powermod(int a) {
+    
+}
